@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <style>
+        .mainbody {
+            height: 100vh;
+        }
+        .content {
+            width: 40vw;
+            margin:auto;
+            box-shadow: 10px 10px 8px 10px #888888;
+            padding: 50px;
+        }
+        .footer {
+            
+            width: 40vw;
+            margin: auto;
+
+        }
+        table{
+            margin-top: 75px;
+            width: 100%;
+        }
+        .inputElement {
+            width: 300px;
+            float: right;
+            height: 50px;
+            background-color: #ede4e4;
+            padding: 5px;
+            padding-left: 20px;
+            font-size: 16px;
+        }
+        .label {
+            font-size: 24px;
+        }
+        .mandatory {
+            color: red;
+        }
+
+        .internalContainer {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .main-head {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .submit {
+            margin-top: 30px;
+            height: 40px;
+            width: 120px;
+            color: white;
+            background-color: #55eb15;
+            font-size: 24px;
+            border: 0px;
+            border-radius: 4px;
+            box-shadow: 2px 2px 2px 2px #888888;
+        }
+
+        th,td {
+            text-align: center;
+        }
+
+        
+
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class = "main-body">
+
+        <div class="content">
+
+            <h1 class = "main-head">Registration form</h1>
+
+            <form onsubmit="validate()">
+
+                <div class = "internalContainer">
+                    <div>
+                        <label class="label" for="name">Name <span class="mandatory">*</span></label>
+                    </div>
+                    
+                    <div>
+                        <input class = "inputElement" id = "name" placeholder = "Name" required type="text">
+                    </div>
+                </div>
+
+
+                <div class = "internalContainer">
+                    <div>
+                        <label class="label" for="email">Email <span class="mandatory">*</span></label>
+                    </div>
+                    
+                    <div>
+                        <input class = "inputElement" id = "email" placeholder = "Email" required type="email">
+                    </div>
+                </div>
+
+                <div class = "internalContainer">
+                    <div>
+                        <label class="label" for="password">Password <span class="mandatory">*</span></label>
+                    </div>
+                    
+                    <div>
+                        <input class = "inputElement" id = "password" placeholder = "Password" required type="password">
+                    </div>
+                </div>
+
+                <div class = "internalContainer">
+                    <div>
+                        <label class="label" for="dob">Date of Birth <span class="mandatory">*</span></label>
+                    </div>
+                    
+                    <div>
+                        <input class = "inputElement" id = "dob"  min="1968-11-21" max="2005-11-21" required type="date">
+                    </div>
+                </div>
+
+                <input required id = "checkbox" type="checkbox">
+                <label for="checkbox">Accept terms & conditions. <span class="mandatory">*</span></label>
+
+                <br>
+
+                <button class="submit" type="submit">Submit</button>
+
+            </form>
+
+        </div>
+
+        <div class = "footer" id = "footer-content">
+            
+        </div>
+
+        
+
+
+    </div>
+
+    <script src="index.js">
+
+        
+        
+    </script>
+
+</body>
+</html>
