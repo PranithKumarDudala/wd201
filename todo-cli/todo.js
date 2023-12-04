@@ -56,7 +56,7 @@ const todoList = () => {
       let result = "";
       list.map((item) => {
 
-            if(item.dueDate !== today)
+            if(item.dueDate === today)
 
                 if(item.completed === true)
                 {
