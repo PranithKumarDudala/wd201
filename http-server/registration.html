@@ -1,153 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
-    <style>
-        .mainbody {
-            height: 100vh;
-        }
-        .content {
-            width: 40vw;
-            margin:auto;
-            box-shadow: 10px 10px 8px 10px #888888;
-            padding: 50px;
-        }
-        .footer {
-            
-            width: 40vw;
-            margin: auto;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Registration Form</title>
+  <style>
+   body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
 
-        }
-        table{
-            margin-top: 75px;
-            width: 100%;
-        }
-        .inputElement {
-            width: 300px;
-            float: right;
-            height: 50px;
-            background-color: #ede4e4;
-            padding: 5px;
-            padding-left: 20px;
-            font-size: 16px;
-        }
-        .label {
-            font-size: 24px;
-        }
-        .mandatory {
-            color: red;
-        }
+    form {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 500px;
+      text-align: center;
+    }
 
-        .internalContainer {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+      color: #333333;
+    }
 
-        .main-head {
-            text-align: center;
-            margin-bottom: 50px;
-        }
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 16px;
+      box-sizing: border-box;
+      border: 1px solid #cccccc;
+      border-radius: 4px;
+    }
 
-        .submit {
-            margin-top: 30px;
-            height: 40px;
-            width: 120px;
-            color: white;
-            background-color: #55eb15;
-            font-size: 24px;
-            border: 0px;
-            border-radius: 4px;
-            box-shadow: 2px 2px 2px 2px #888888;
-        }
+    input[type="checkbox"] {
+      margin-bottom: 8px;
+      display: inline-block; /* Added this line */
+    }
 
-        th,td {
-            text-align: center;
-        }
+    button {
+      background-color: #4caf50;
+      color: #ffffff;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+      font-size: 16px;
+    }
 
-        
-
-    </style>
-    <title>Document</title>
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
 </head>
 <body>
-    
-    <div class = "main-body">
+  <form id="details">
+    <h1 style="color: red;border-bottom: 2px solid #333;">Registration Form</h1>
+    <label for="name">Username:</label>
+    <input type="text" id="name" name="Username" required>
 
-        <div class="content">
+    <label for="email">Email:</label>
+    <input type="email" type="email" id="email" required>
 
-            <h1 class = "main-head">Registration form</h1>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
 
-            <form onsubmit="validate()">
+    <label for="dob">Date of Birth:</label>
+    <input type="date" min="1968-11-01" max="2005-11-01" id="dob" name="dob" required>
 
-                <div class = "internalContainer">
-                    <div>
-                        <label class="label" for="name">Name <span class="mandatory">*</span></label>
-                    </div>
-                    
-                    <div>
-                        <input class = "inputElement" id = "name" placeholder = "Name" required type="text">
-                    </div>
-                </div>
+    <label>
+      <input id="accept" type="checkbox" required>
+      <center>I accept the terms and conditions</center>
+    </label>
+    <button type="submit">Submit</button>
 
-
-                <div class = "internalContainer">
-                    <div>
-                        <label class="label" for="email">Email <span class="mandatory">*</span></label>
-                    </div>
-                    
-                    <div>
-                        <input class = "inputElement" id = "email" placeholder = "Email" required type="email">
-                    </div>
-                </div>
-
-                <div class = "internalContainer">
-                    <div>
-                        <label class="label" for="password">Password <span class="mandatory">*</span></label>
-                    </div>
-                    
-                    <div>
-                        <input class = "inputElement" id = "password" placeholder = "Password" required type="password">
-                    </div>
-                </div>
-
-                <div class = "internalContainer">
-                    <div>
-                        <label class="label" for="dob">Date of Birth <span class="mandatory">*</span></label>
-                    </div>
-                    
-                    <div>
-                        <input class = "inputElement" id = "dob"  min="1968-11-21" max="2005-11-21" required type="date">
-                    </div>
-                </div>
-
-                <input required id = "checkbox" type="checkbox">
-                <label for="checkbox">Accept terms & conditions. <span class="mandatory">*</span></label>
-
-                <br>
-
-                <button class="submit" type="submit">Submit</button>
-
-            </form>
-
-        </div>
-
-        <div class = "footer" id = "footer-content">
-            
-        </div>
-
+    <h2 style = "text-decoration: underline;">Table of User Entries</h2>
+         <div id = "user-entries">
         
-
-
+      </div>
     </div>
+  </form>
 
-    <script src="index.js">
-
-        
-        
-    </script>
-
+<script src="index.js"></script>
 </body>
 </html>

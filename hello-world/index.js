@@ -1,7 +1,4 @@
-
-
-const welcome = () => {
+const hello = () => {
     console.log("Hello GitHub!");
-}
-
-welcome();
+  };
+  hello();
