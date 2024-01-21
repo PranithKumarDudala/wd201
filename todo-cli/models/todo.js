@@ -52,48 +52,48 @@ module.exports = (sequelize, DataTypes) => {
     
 
     static async overdue() {
-      let allDues=await Todo.findAll();
-      let resultDues = [];
+      let all=await Todo.findAll();
+      let res = [];
       const today = new Date();
       today.setHours(0, 0, 0, 0);
-      for (let i = 0; i < allDues.length; i++) {
-      let due=new Date(allDues[i].dueDate);
-      due.setHours(0, 0, 0, 0);
-      if (due.getTime() < today.getTime()) {
-        resultDues.push(allDues[i]);
+      for (let i = 0; i < all.length; i++) {
+      let duedate=new Date(all[i].dueDate);
+      duedate.setHours(0, 0, 0, 0);
+      if (duedate.getTime() < today.getTime()) {
+        res.push(all[i]);
       }
     }
-    return resultDues;
+    return res;
     }
 
     static async dueToday() {
-      let allDues=await Todo.findAll();
-      let resultDues = [];
+      let all=await Todo.findAll();
+      let res = [];
       const today = new Date();
       today.setHours(0, 0, 0, 0);
-      for (let i = 0; i < allDues.length; i++) {
-      let due=new Date(allDues[i].dueDate);
-      due.setHours(0, 0, 0, 0);
-      if (due.getTime() === today.getTime()) {
-        resultDues.push(allDues[i]);
+      for (let i = 0; i < all.length; i++) {
+      let duedate=new Date(all[i].dueDate);
+      duedate.setHours(0, 0, 0, 0);
+      if (duedate.getTime() === today.getTime()) {
+        res.push(all[i]);
       }
     }
-    return resultDues;
+    return res;
     }
 
     static async dueLater() {
-      let allDues=await Todo.findAll();
-      let resultDues = [];
+      let all=await Todo.findAll();
+      let res = [];
       const today = new Date();
       today.setHours(0, 0, 0, 0);
-      for (let i = 0; i < allDues.length; i++) {
-      let due=new Date(allDues[i].dueDate);
-      due.setHours(0, 0, 0, 0);
-      if (due.getTime() > today.getTime()) {
-        resultDues.push(allDues[i]);
+      for (let i = 0; i < all.length; i++) {
+      let duedate=new Date(all[i].dueDate);
+      duedate.setHours(0, 0, 0, 0);
+      if (duedate.getTime() > today.getTime()) {
+        res.push(all[i]);
       }
     }
-    return resultDues;
+    return res;
     }
 
     static async markAsComplete(id) {
@@ -118,6 +118,7 @@ module.exports = (sequelize, DataTypes) => {
       }
       return `${this.id}. ${checkbox} ${this.title} ${this.dueDate}`;
     }
+    
   }
   Todo.init({
     title: DataTypes.STRING,
